@@ -6,10 +6,12 @@ import { AUTH_TOKEN, LINKS_PER_PAGE } from '../constants';
 
 
 const UPDATE_LINK_MUTATION = gql`
-  mutation UpdatePostMutation($linkID:ID! $description: String! $url: String!)
-   {
-    update(linkID:$linkID! description: $description, url: $url) 
-    {
+  mutation UpdateMutation(
+    $linkId: ID!
+    $description: String!
+    $url: String!
+  ) {
+    update(linkId: $linkId, description: $description, url: $url) {
       id
       url
       description

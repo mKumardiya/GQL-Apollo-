@@ -62,22 +62,26 @@ async function login(parent, args, context, info) {
 }
 
 async function update(parent, args, context, info) {
-  const user = await context.prisma.user.findUnique({
+
+  const link = await context.prisma.link.findUnique({
     where: { id: args.linkId }
   });
+
   if (!link) {
     throw new Error('No such link found');
   }
+
   return context.prisma.link.update({
-    data:{
-      url:args.url,
-      description:args.description,
+    data: {
+      url: args.url,
+      description: args.description,
     },
-    where:{
-      id:args.linkId,
+    where: {
+      id: args.linkId,
     },
   })
 }
+
 async function vote(parent, args, context, info) {
   const { userId } = context;
 
