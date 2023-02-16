@@ -11,6 +11,7 @@ import Login from './Login';
 import Search from './Search';
 import { Navigate } from 'react-router-dom';
 import Linklist from './Linklist';
+import Updatelink from './Updatelink';
 
 // function App() {
 //   return (
@@ -56,6 +57,7 @@ const App = () => {
             path="/create"
             element={<CreateLink/>}
           />
+           <Route path="/update/:id" element={<Updatelink/>} />
           <Route path="/login" element={<Login/>} />
           <Route path="/search"element={<Search/>}/>
           <Route path="/top" element={<LinkList/>} />
