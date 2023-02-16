@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from './Link';
 import { useQuery, gql } from '@apollo/client';
+import { makeVar } from '@apollo/client';
 
 import { LINKS_PER_PAGE } from '../constants';
 import {useLocation, useNavigate} from 'react-router-dom';
@@ -114,7 +115,11 @@ const Linklist = () => {
     variables: getQueryVariables(isNewPage, page),
   });
 
-
+  React.useEffect(() => {
+    setTimeout(() => {
+        cartItemsVar([1, 2, 3]);
+    }, 10000)
+}, [])
   subscribeToMore({
     document: NEW_VOTES_SUBSCRIPTION
   });

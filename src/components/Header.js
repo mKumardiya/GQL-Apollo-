@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AUTH_TOKEN } from '../constants';
 import { cartItemsVar } from './Linklist';
+import { useReactiveVar } from '@apollo/client';
 const Header = () => {
   const navigate = useNavigate();
   const authToken = localStorage.getItem(AUTH_TOKEN);
